@@ -8,10 +8,9 @@ import vn.sun.asterisk.domain.model.Topic
 import vn.sun.asterisk.toeic600.R
 import vn.sun.asterisk.toeic600.ui.base.BaseRecyclerAdapter
 
-internal class CategoryAdapter :
-    BaseRecyclerAdapter<Category, CategoryViewHolder>(CategoryDiffUtilCallback()) {
-
-    var onTopicClick: (Topic) -> Unit = {}
+internal class CategoryAdapter(
+    private val onTopicClick: (Topic) -> Unit
+) : BaseRecyclerAdapter<Category, CategoryViewHolder>(CategoryDiffUtilCallback()) {
 
     private val onItemClick = { position: Int, category: Category ->
         category.isExpanded = !category.isExpanded

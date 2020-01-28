@@ -1,5 +1,7 @@
 package vn.sun.asterisk.domain.model
 
+import java.io.Serializable
+
 data class Topic(
     val id: Int = 0,
     val name: String = "",
@@ -11,4 +13,4 @@ data class Topic(
     val master: Int = 0,
     val newWord: Int = 0,
     val remind: Int = 0
-)
+) : Serializable

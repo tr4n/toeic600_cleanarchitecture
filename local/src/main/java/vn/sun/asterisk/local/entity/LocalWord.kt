@@ -1,6 +1,5 @@
 package vn.sun.asterisk.local.entity
 
-import android.os.Parcelable
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -19,7 +18,6 @@ import vn.sun.asterisk.local.DatabaseConfig
         )
     ]
 )
-@Parcelize
 data class LocalWord(
     @PrimaryKey(autoGenerate = true)
     @NonNull
@@ -33,7 +31,7 @@ data class LocalWord(
     @ColumnInfo(name = FIELD_EXAMPLE_TRANSLATION) val exampleTranslate: String? = null,
     @ColumnInfo(name = FIELD_TOPIC_ID) val topicId: Int,
     @ColumnInfo(name = FIELD_LEVEL) var level: Int = 0
-) : Parcelable {
+) {
 
     val soundUrl get() = String.format(DatabaseConfig.SOUND_URL_FORMAT, origin.replace(' ', '_'))
 

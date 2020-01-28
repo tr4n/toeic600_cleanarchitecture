@@ -4,6 +4,7 @@ import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import vn.sun.asterisk.presentation.viewmodel.CategoryViewModel
 import vn.sun.asterisk.presentation.viewmodel.MainViewModel
+import vn.sun.asterisk.presentation.viewmodel.StudyViewModel
 
 val presentationModule = module {
     viewModel {
@@ -12,5 +13,9 @@ val presentationModule = module {
 
     viewModel {
         CategoryViewModel(getCategoriesUseCase = get())
+    }
+
+    viewModel {
+        StudyViewModel()
     }
 }

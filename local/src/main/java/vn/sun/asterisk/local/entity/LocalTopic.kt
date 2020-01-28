@@ -1,6 +1,5 @@
 package vn.sun.asterisk.local.entity
 
-import android.os.Parcelable
 import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -10,7 +9,6 @@ import vn.sun.asterisk.data.entity.MappableData
 import vn.sun.asterisk.data.entity.TopicEntity
 
 @Entity(tableName = LocalTopic.TABLE_NAME)
-@Parcelize
 data class LocalTopic(
     @PrimaryKey
     @NonNull
@@ -24,7 +22,7 @@ data class LocalTopic(
     @ColumnInfo(name = FIELD_MASTER) var master: Int = 0,
     @ColumnInfo(name = FIELD_NEW_WORD) var newWord: Int = 0,
     @ColumnInfo(name = FIELD_REMIND) var remind: Int = 0
-) : Parcelable, MappableData<TopicEntity> {
+) : MappableData<TopicEntity> {
 
     override fun map() =
         TopicEntity(id, name, imageUrl, category, color, lastTime, total, master, newWord, remind)
