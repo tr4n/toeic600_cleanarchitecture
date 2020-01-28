@@ -23,7 +23,7 @@ import vn.sun.asterisk.local.DatabaseConfig
 data class LocalWord(
     @PrimaryKey(autoGenerate = true)
     @NonNull
-    @ColumnInfo(name = FIELD_ID) val id: Int,
+    @ColumnInfo(name = FIELD_ID, index = true) val id: Int,
     @ColumnInfo(name = FIELD_ORIGIN) val origin: String,
     @ColumnInfo(name = FIELD_EXPLANATION) val explanation: String,
     @ColumnInfo(name = FIELD_TYPE) val type: String,

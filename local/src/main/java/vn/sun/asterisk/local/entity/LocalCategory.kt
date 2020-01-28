@@ -9,5 +9,5 @@ data class LocalCategory(
     val topics: List<LocalTopic>
 ) : LocalEntity(), MappableData<CategoryEntity> {
 
-    override fun map() = CategoryEntity(name, color, topics.map(LocalTopic::name))
+    override fun map() = CategoryEntity(name, color, topics.map(LocalTopic::map))
 }

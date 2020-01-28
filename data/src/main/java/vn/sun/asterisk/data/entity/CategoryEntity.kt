@@ -5,8 +5,8 @@ import vn.sun.asterisk.domain.model.Category
 data class CategoryEntity(
     val name: String,
     val color: String,
-    val topics: List<String>
+    val topics: List<TopicEntity>
 ) : DataEntity(), MappableData<Category> {
 
-    override fun map() = Category(name, color, topics)
+    override fun map() = Category(name, color, topics.map(TopicEntity::map))
 }

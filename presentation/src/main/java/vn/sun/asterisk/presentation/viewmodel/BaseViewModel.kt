@@ -10,7 +10,7 @@ import kotlin.coroutines.CoroutineContext
 
 abstract class BaseViewModel : ViewModel(), CoroutineScope, KoinComponent {
 
-    private val _messageToast = MutableLiveData<String>()
+    protected val _messageToast = MutableLiveData<String>()
 
     val messageToast: LiveData<String> get() = _messageToast
 

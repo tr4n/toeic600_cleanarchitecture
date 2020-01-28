@@ -2,6 +2,7 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.MainActivity">
@@ -32,11 +33,10 @@
             android:id="@+id/frameContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view"
+        android:id="@+id/navigationView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
@@ -65,8 +65,6 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/header" />
-
         </LinearLayout>
     </com.google.android.material.navigation.NavigationView>
-
 </androidx.drawerlayout.widget.DrawerLayout>

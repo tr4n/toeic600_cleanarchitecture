@@ -6,6 +6,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
+import vn.sun.asterisk.data.entity.MappableData
+import vn.sun.asterisk.data.entity.TopicEntity
 
 @Entity(tableName = LocalTopic.TABLE_NAME)
 @Parcelize
@@ -22,7 +24,10 @@ data class LocalTopic(
     @ColumnInfo(name = FIELD_MASTER) var master: Int = 0,
     @ColumnInfo(name = FIELD_NEW_WORD) var newWord: Int = 0,
     @ColumnInfo(name = FIELD_REMIND) var remind: Int = 0
-) : Parcelable {
+) : Parcelable, MappableData<TopicEntity> {
+
+    override fun map() =
+        TopicEntity(id, name, imageUrl, category, color, lastTime, total, master, newWord, remind)
 
     companion object {
         const val IS_REMINDED = 1

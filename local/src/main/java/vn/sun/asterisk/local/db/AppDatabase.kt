@@ -10,7 +10,11 @@ import vn.sun.asterisk.local.DatabaseConfig.DATABASE_VERSION
 import vn.sun.asterisk.local.entity.LocalTopic
 import vn.sun.asterisk.local.entity.LocalWord
 
-@Database(entities = [LocalTopic::class, LocalWord::class], version = DATABASE_VERSION, exportSchema = true)
+@Database(
+    entities = [LocalTopic::class, LocalWord::class],
+    version = DATABASE_VERSION,
+    exportSchema = false
+)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun wordDao(): WordDao
