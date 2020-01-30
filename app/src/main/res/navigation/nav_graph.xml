@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigationGraph"
+    app:startDestination="@id/categoryFragment">
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="vn.sun.asterisk.toeic600.ui.category.CategoryFragment"
+        android:label="CategoryFragment">
+        <action
+            android:id="@+id/action_categoryFragment_to_studyFragment"
+            app:destination="@id/studyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studyFragment"
+        android:name="vn.sun.asterisk.toeic600.ui.study.StudyFragment"
+        android:label="study_fragment"
+        tools:layout="@layout/study_fragment">
+        <argument
+            android:name="Topic"
+            app:argType="vn.sun.asterisk.domain.model.Topic" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="vn.sun.asterisk.toeic600.ui.main.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+</navigation>
